@@ -16,13 +16,9 @@ public class CRUDButaca {
 	}
 
 	public boolean cambiarEstadoButaca(Butaca b) {
-		System.out.println("Entrando a actualizar estado butaca");
-		System.out.println(b.getReservado() + " " + b.getId());
 		this.sql = "UPDATE butaca SET reservada=" + !b.getReservado() + " WHERE id=" + b.getId();
-		try {
-			System.out.println("Intentando ejecutar sentencia para actualizar butaca");
+		try {	
 			this.conexion.getSentenciaSQL().executeUpdate(this.sql);
-			System.out.println("Sentencia ejecturada con exito");
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,12 +28,9 @@ public class CRUDButaca {
 	}
 
 	public boolean butacaDisponible(Butaca b) {
-		System.out.println("Entrando a butaca");
 		this.sql = "SELECT reservada FROM butaca where id=" + b.getId();
-		try {
-			System.out.println("Buscando resultados");
-			ResultSet res = this.conexion.getSentenciaSQL().executeQuery(sql);
-			System.out.println("Ejecuto sentencia con exito");
+		try {	
+			ResultSet res = this.conexion.getSentenciaSQL().executeQuery(sql);	
 			res.next();
 			System.out.println(res.getBoolean("reservada") );
 			if (res.getBoolean("reservada") == false) {

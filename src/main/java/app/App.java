@@ -1,4 +1,5 @@
 package app;
+
 import static spark.Spark.*;
 import com.google.gson.*;
 import models.*;
@@ -9,7 +10,7 @@ public class App {
 	public static void main(String[] args) {
 		Gson mapper = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm").create();
 		port(1111);
-		//USUARIOS
+		// USUARIOS
 		post("/registrar", (request, response) -> {
 			response.type("application/json");
 			Gson mapperUs = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
@@ -67,11 +68,11 @@ public class App {
 			}
 			return mapper.toJson("Error al actualizar reserva");
 		});
-		get("/mostrarSesiones",(request,response)->{
-			CRUDSesion s=new CRUDSesion();
-			return mapper.toJson(s.verSesiones());			
+		get("/mostrarSesiones", (request, response) -> {
+			CRUDSesion s = new CRUDSesion();
+			return mapper.toJson(s.verSesiones());
 		});
-		//ADMINISTRADORES
+		// ADMINISTRADORES
 		post("/crearPelicula", (request, response) -> {
 			response.type("application,json");
 			Pelicula p = mapper.fromJson(request.body(), Pelicula.class);
@@ -85,7 +86,7 @@ public class App {
 			response.type("application,json");
 			Sesion s = mapper.fromJson(request.body(), Sesion.class);
 			if (new CRUDSesion().crearSesion(s)) {
-				return mapper.toJson("Se creó correctamente sala");
+				return mapper.toJson("Se creó correctamente la sesion");
 			}
 			return mapper.toJson("Hubo un error en la creacion");
 		});
@@ -120,13 +121,13 @@ public class App {
 			CRUDReserva reserva = new CRUDReserva();
 			return mapper.toJson(reserva.mostrarReservas());
 		});
-		get("/verPeliculas",(request,response)->{
-			CRUDPelicula s=new CRUDPelicula();
-			return mapper.toJson(s.verPeliculas());			
+		get("/verPeliculas", (request, response) -> {
+			CRUDPelicula s = new CRUDPelicula();
+			return mapper.toJson(s.verPeliculas());
 		});
-		get("/verPeliculas/:idPelicula",(request,response)->{
-			CRUDPelicula s=new CRUDPelicula();
-			return mapper.toJson(s.verPeliculas(new Pelicula(Integer.valueOf(request.params(":idPelicula")))));			
+		get("/verPeliculas/:idPelicula", (request, response) -> {
+			CRUDPelicula s = new CRUDPelicula();
+			return mapper.toJson(s.verPeliculas(new Pelicula(Integer.valueOf(request.params(":idPelicula")))));
 		});
 	}
 

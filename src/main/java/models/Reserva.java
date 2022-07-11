@@ -2,7 +2,6 @@ package models;
 
 import java.sql.Timestamp;
 
-
 public class Reserva {
 	private Integer id;
 	private Butaca butaca;
@@ -13,16 +12,18 @@ public class Reserva {
 	private Descuento descuento;
 	private Sesion sesion;
 	private Double total;
-	public Reserva(Usuario usuario,Sesion sesion,Timestamp fecha,TarjetaCredito pago,Double precio,Double total) {
-			this.usuario=usuario;
-			this.sesion=sesion;
-			this.fecha=fecha;
-			this.total=total;
-			this.pago=pago;
-			this.precio=precio;
+
+	public Reserva(Usuario usuario, Sesion sesion, Timestamp fecha, TarjetaCredito pago, Double precio, Double total) {
+		this.usuario = usuario;
+		this.sesion = sesion;
+		this.fecha = fecha;
+		this.total = total;
+		this.pago = pago;
+		this.precio = precio;
 	}
-	public Reserva(Butaca butaca, Usuario usuario, Double precio, Timestamp fecha
-			, TarjetaCredito pago,Descuento descuento,Sesion sesion,Double total,Integer id) {
+
+	public Reserva(Butaca butaca, Usuario usuario, Double precio, Timestamp fecha, TarjetaCredito pago,
+			Descuento descuento, Sesion sesion, Double total, Integer id) {
 		super();
 		this.butaca = butaca;
 		this.usuario = usuario;
@@ -30,21 +31,25 @@ public class Reserva {
 		this.descuento = descuento;
 		this.fecha = fecha;
 		this.pago = pago;
-		this.descuento=descuento;
-		this.sesion=sesion;
-		this.total=total;
-		this.id=id;
+		this.descuento = descuento;
+		this.sesion = sesion;
+		this.total = total;
+		this.id = id;
 	}
-	public Reserva(Sesion s,Butaca b ) {
-		this.butaca=b;
-		this.sesion=s;
+
+	public Reserva(Sesion s, Butaca b) {
+		this.butaca = b;
+		this.sesion = s;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public Timestamp getFecha() {
 		return fecha;
 	}
@@ -60,9 +65,11 @@ public class Reserva {
 	public Double getTotal() {
 		return total;
 	}
+
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+
 	public void setPago(TarjetaCredito pago) {
 		this.pago = pago;
 	}
@@ -106,8 +113,9 @@ public class Reserva {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
+
 	public boolean validarReserva() {
-		return pago.sePuedePagar(this.precio); 
+		return pago.sePuedePagar(this.precio);
 	}
-	
+
 }

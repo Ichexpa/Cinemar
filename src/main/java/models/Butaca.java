@@ -6,18 +6,20 @@ public class Butaca {
 	private Integer numero;
 	private Sala sala;
 	private Boolean reservado;
-	
-	public Butaca(Integer id,String fila, Integer numero, Sala sala) {
+
+	public Butaca(Integer id, String fila, Integer numero, Sala sala) {
 		super();
 		this.fila = fila;
 		this.numero = numero;
 		this.sala = sala;
-		this.reservado=false;
-		this.id=id;
+		this.reservado = false;
+		this.id = id;
 	}
+
 	public Butaca(Integer id) {
-		this.id=id;
+		this.id = id;
 	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -57,5 +59,5 @@ public class Butaca {
 	public void setReservado(Boolean reservado) {
 		this.reservado = reservado;
 	}
-	
+
 }
