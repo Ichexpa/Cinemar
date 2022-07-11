@@ -32,11 +32,8 @@ public class CRUDDescuento {
 		System.out.println(d.getDescuento()+" " + d.getId());
 		this.sql="UPDATE descuento SET porcentaje=" +d.getDescuento()+ " WHERE id=" + d.getId();
 		
-		try {
-			
-			System.out.println("Ingresando a try");
+		try {		
 			int resultado= this.conexion.getSentenciaSQL().executeUpdate(sql);
-			System.out.println("Ejecutado con exito");
 			return resultado>0;
 		}
 	catch(SQLException e) {

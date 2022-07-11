@@ -42,16 +42,19 @@ public class App {
 			return mapper.toJson("Hubo un error en la reserva");
 		});
 		get("/misReservas/:idUsuario", (request, response) -> {
+			response.type("application/json");
 			Usuario user = new Usuario(Integer.valueOf(request.params(":idUsuario")));
 			CRUDReserva r = new CRUDReserva();
 			return mapper.toJson(r.observarReservasParciales(user));
 		});
 		get("/misEntradas/:idUsuario", (request, response) -> {
+			response.type("application/json");
 			Usuario user = new Usuario(Integer.valueOf(request.params(":idUsuario")));
 			CRUDReserva r = new CRUDReserva();
 			return mapper.toJson(r.mostrarReservas(user));
 		});
 		put("/solicitarTarjetaDescuento/:idUsuario", (request, response) -> {
+			response.type("application/json");
 			Usuario user = new Usuario(Integer.valueOf(request.params(":idUsuario")));
 			CRUDUsuario cu = new CRUDUsuario();
 			if (cu.solicitarTarjetaDescuento(user)) {
@@ -60,6 +63,7 @@ public class App {
 			return mapper.toJson("No se cumplio con los requisitos para obtener la tarjeta");
 		});
 		put("/actualizarReserva/:idReserva", (request, response) -> {
+			response.type("application/json");
 			Reserva reserva = mapper.fromJson(request.body(), Reserva.class);
 			reserva.setId(Integer.valueOf(request.params(":idReserva")));
 			CRUDReserva res = new CRUDReserva();
@@ -69,6 +73,7 @@ public class App {
 			return mapper.toJson("Error al actualizar reserva");
 		});
 		get("/mostrarSesiones", (request, response) -> {
+			response.type("application/json");
 			CRUDSesion s = new CRUDSesion();
 			return mapper.toJson(s.verSesiones());
 		});
@@ -102,6 +107,7 @@ public class App {
 			}
 		});
 		delete("/room/delete/:idSala", (request, response) -> {
+			response.type("application/json");
 			Sala s = mapper.fromJson(request.body(), Sala.class);
 			s.setId(Integer.valueOf(request.params(":idSala")));
 			if (new CRUDSala().eliminarSala(s)) {
@@ -110,6 +116,7 @@ public class App {
 			return mapper.toJson("Error al eliminar ");
 		});
 		put("/room/modify/:idSesion", (request, response) -> {
+			response.type("application/json");
 			Sesion s = mapper.fromJson(request.body(), Sesion.class);
 			s.setId(Integer.valueOf(request.params(":idSesion")));
 			if (new CRUDSesion().modificarSesion(s)) {
@@ -122,10 +129,12 @@ public class App {
 			return mapper.toJson(reserva.mostrarReservas());
 		});
 		get("/verPeliculas", (request, response) -> {
+			response.type("application/json");
 			CRUDPelicula s = new CRUDPelicula();
 			return mapper.toJson(s.verPeliculas());
 		});
 		get("/verPeliculas/:idPelicula", (request, response) -> {
+			response.type("application/json");
 			CRUDPelicula s = new CRUDPelicula();
 			return mapper.toJson(s.verPeliculas(new Pelicula(Integer.valueOf(request.params(":idPelicula")))));
 		});
