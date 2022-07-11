@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "fcbb3a4a-c4f3-43dc-ba3f-b8fb3cf971e4",
+		"name": "RequestGET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20767834"
+	},
+	"item": [
+		{
+			"name": "reservasParciales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/misReservas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"misReservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todasLasReservas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/todasLasReservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"todasLasReservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mostrarSesionesDisponibles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/mostrarSesiones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"mostrarSesiones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerMisEntradas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/misEntradas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"misEntradas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerTodasLasPelicula",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/verPeliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"verPeliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerPeliculaEspecifica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/verPeliculas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"verPeliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

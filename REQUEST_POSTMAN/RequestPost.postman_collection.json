@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "ae661a1a-3d7a-4b70-97e7-b706c3506e2b",
+		"name": "RequestPost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20767834"
+	},
+	"item": [
+		{
+			"name": "RegistrarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Agustin\",\r\n    \"apellido\":\"Torres\",\r\n    \"email\":\"ags@gmail.com\",\r\n    \"documento\":\"99233455\",\r\n    \"fecha_nac\":\"2000-02-10\",\r\n    \"contraseña\":\"122223453\",\r\n    \"nombreUsuario\":\"aguTo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"registrar"
+					]
+				},
+				"description": "registarUsuario"
+			},
+			"response": []
+		},
+		{
+			"name": "CrearPelicula",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Lightyear\",\r\n    \"duracion\":123,\r\n    \"sinopsis\":\"Buzz Lightyear se embarca en una aventura intergaláctica con un grupo de reclutas ambiciosos y su compañero robot. Los amigos tendrán que aprender a trabajar juntos para escapar del malvado Zurg y su ejército de robots.\",\r\n    \"clasificacion\":{\r\n        \"id\":1\r\n    },\r\n    \"tipo\":{\r\n        \"id\":2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/crearPelicula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"crearPelicula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"\",\r\n    \"nombreUsuario\":\"aguTo\",\r\n    \"contraseña\":\"122223453\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearSesion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pelicula\":{\r\n        \"id\":1\r\n    },\r\n    \"sala\":{\r\n        \"id\":2\r\n    },\r\n    \"fecha\":\"2022-10-15 13:30\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/crearSesion/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"crearSesion",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reservar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"butaca\":{\r\n        \"id\":2\r\n    },\r\n    \"usuario\":{\r\n        \"id\":3\r\n    },\r\n    \"precio\":150,\r\n    \"sesion\":{\r\n        \"id\":5\r\n    },\r\n    \"pago\":{\r\n        \"numero\":45764234\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/reservar/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"reservar",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
